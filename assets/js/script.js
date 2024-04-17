@@ -9,6 +9,7 @@ let obj = {}
 let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
 let edad = document.getElementById("edad");
+let error = document.getElementById("error");
 
 let btnEnviar = document.getElementById("btnEnviar");
 
@@ -20,6 +21,7 @@ btnEnviar.addEventListener("click", (e)=> {
     edadV = edad.value;
 
     if(nombreV === ""){
+        
         return;
     }
 
