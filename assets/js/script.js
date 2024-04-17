@@ -1,40 +1,31 @@
-let nombreV = "";
-let apellidoV = "";
-let edadV = 0;
-
-let arr = []
-let obj = {}
-
 
 let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
-let edad = document.getElementById("edad");
-let error = document.getElementById("error");
-
+let error1 = document.getElementById("error1");
+let error2 = document.getElementById("error2");
 let btnEnviar = document.getElementById("btnEnviar");
 
-btnEnviar.addEventListener("click", (e)=> {
+let nombreV = "";
+let apellidoV = "";
+
+btnEnviar.addEventListener("click", function(e){
     e.preventDefault();
-    
+    error1.innerHTML = "";
+
     nombreV = nombre.value;
     apellidoV = apellido.value;
     edadV = edad.value;
 
     if(nombreV === ""){
-        
+        error1.innerHTML = "debe ingresar su nombre"
+        error1.style.color = "red";
         return;
     }
 
-    if(apellidoV === ""){
-        return;
-    }
 
-    if(edadV === ""){
-        return;
-    }
-
-    
-
-    console.log(`Nombre : ${nombreV} y el apellido es: ${apellidoV} y la edad es de: ${edadV}`);
+    console.log(typeof(nombreV));
+    nombre.value = "";
+    apellido.value = "";
+    console.log('Envio de datos exitoso');
 
 })
